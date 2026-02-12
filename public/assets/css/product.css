@@ -1,0 +1,77 @@
+*{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+/* peroudct */
+.product-hero{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #E8D9DD;
+    text-align: center;
+}
+
+.product-page h1{
+    padding-bottom: 47px;
+}
+
+.product-page{
+    text-align: center;
+}
+
+/* product-card */
+.product-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 100px 20px 100px;
+}
+
+.product-card{
+    padding: 12px;
+    border: 2px solid gray;
+    border-radius: 16px;
+}
+
+.template-grid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 25px;
+}
+
+/* price-list */
+.price-list{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    background-color: #FDFBF9;
+}
+
+h4{
+    max-width: 400px;
+}
+
+/* button */
+.cta{
+    display: inline-block;
+    background-color: #FF6E6E;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 32px;
+}
+
+.cta:hover{
+    transform: translateY(-2px) scale(1.02);
+    background-color: #FF5151;
+    box-shadow: 0 5px 15px rgba(230, 91, 91, 0.4);
+}

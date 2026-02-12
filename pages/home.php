@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/assets/css/home.css">
     <link rel="stylesheet" href="../public/assets/css/navbar.css">
+    <link rel="stylesheet" href="../public/assets/css/footer.css">
+    <link rel="stylesheet" href="../public/assets/css/faq.css">
     <title>Frame Smile | Home</title>
 </head>
 
@@ -23,7 +26,7 @@
         </div>
 
         <div class="hero-img">
-            <img src="/img/hero-img.png" alt="Sebuah foto berbentuk lingkaran hasil foto hasil photobooth dua wanita">
+            <img src="../public/assets/img/hero-img.png" alt="Sebuah foto berbentuk lingkaran hasil foto hasil photobooth dua wanita">
         </div>
     </section>
 
@@ -58,6 +61,8 @@
         </details>
     </section>
 
+    <!-- footer -->
+    <?php require_once __DIR__ . '/../components/footer.php'; ?>
     <script src="/src/script.js"></script>
 </body>
 

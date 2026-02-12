@@ -3,24 +3,24 @@
             
         <div class="footer-brand">
             <div class="title">
-                <a href="/src/index.html"><img src="/img/LOGO FRAME SMILE ACC 1.png" alt="Logo berbentuk bintang dengan tulisan Frame smile ditengah serta memiliki ujung yang tumpul"></a>
+                <a href="../pages/home.php"><img src="../public/assets/img/icon-framesmile.png" alt="Logo berbentuk bintang dengan tulisan Frame smile ditengah serta memiliki ujung yang tumpul"></a>
                 <h3>FRAME <span>SMILE</span></h3>
             </div>
             <p>Spesialis editing photobooth profesional dan cetak foto berkualitas dengan harga terjangkau</p>
             <div class="social">
-                <img src="/img/instagram.svg" alt="icon Instagram">
-                <img src="/img/Facebook.svg" alt="icon Facebook">
-                <img src="/img/X.svg" alt="icon X">
+                <img src="../public/assets/img/instagram.svg" alt="icon Instagram">
+                <img src="../public/assets//img/Facebook.svg" alt="icon Facebook">
+                <img src="../public/assets//img/X.svg" alt="icon X">
             </div>
         </div>
 
         <div class="footer-col">
             <h4>Tautan Cepat</h4>
             <ul>
-                <li><a href="/src/home/index.html">Home</a></li>
-                <li><a href="/src/about.html">About</a></li>
-                <li><a href="/src/product/product.html">Product</a></li>
-                <li><a href="/src/contact.html">Contact</a></li>
+                <li><a href="../pages/home.php">Home</a></li>
+                <li><a href="../pages/about.php">About</a></li>
+                <li><a href="../pages/product.php">Product</a></li>
+                <li><a href="../pages/contact.php">Contact</a></li>
             </ul>
             </div>
 
@@ -38,15 +38,15 @@
             <h4>Kontak</h4>
             <ul>
                 <div class="Kontak-img">
-                    <img src="/img/Map pin.svg" alt="">
+                    <img src="../public/assets//img/Map-pin.svg" alt="">
                     <li>Jl. Katapang No. 123, Bandung</li>
                 </div>
                 <div class="Kontak-img">
-                    <img src="/img/Phone.svg" alt="">
+                    <img src="../public/assets//img/Phone.svg" alt="">
                     <li>+62 85-721-922-850</li>
                 </div>
                 <div class="Kontak-img">
-                    <img src="/img/Mail.svg" alt="">
+                    <img src="../public/assets//img/Mail.svg" alt="">
                     <li>support@FrameSmile@gmail.com</li>
                 </div>
             </ul>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="footer-bottom">
-        <a href="/src/index.html"><img src="/img/LOGO FRAME SMILE ACC 1.png"></a>
+        <a href="../pages/home.php"><img src="../public/assets/img/icon-framesmile.png"></a>
         <p>© 2025 Frame Smile. All Rights Reserved.</p>
     </div>
 </footer>
