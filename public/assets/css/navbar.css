@@ -1,0 +1,84 @@
+.navbar{
+    background-color: #FBFAFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    padding: 15px 25px;
+}
+
+.logo{
+    margin-left: 0; 
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo img{
+    width: 75px;
+    height: auto;
+}
+
+.logo p {
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.logo span{
+    color: #FF7979;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    margin-right: 0; 
+}
+
+/* navlinks */
+
+.navlink{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 15px; 
+}
+
+.navlink a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    margin: 0; 
+    padding: 8px 12px;
+
+}
+
+.navlink a:hover{
+    color: #FF7979;
+}
+
+.nav-btn{
+    margin-right: 0; 
+}
+
+.nav-btn a{
+    background-color: #FF7979;
+    color: white;
+    margin: 0; 
+    border-radius: 6px;
+    padding: 6px 9px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.nav-btn a:hover{
+    transform: translateY(-2px) scale(1.02);
+    background-color: #FF5151;
+    box-shadow: 0 5px 15px rgba(230, 91, 91, 0.4);
+    cursor: pointer;
+    -webkit-transform: translateY(-2px) scale(1.02);
+    -moz-transform: translateY(-2px) scale(1.02);
+    -ms-transform: translateY(-2px) scale(1.02);
+    -o-transform: translateY(-2px) scale(1.02);
+}
