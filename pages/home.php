@@ -63,6 +63,7 @@
 
     <!-- footer -->
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
+    
     <script src="/src/script.js"></script>
 </body>
 
