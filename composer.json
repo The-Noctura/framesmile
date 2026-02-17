@@ -1,0 +1,19 @@
+{
+    "name": "framesmile/app",
+    "description": "Production-ready photo printing and custom design web application for Framesmile",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Framesmile\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "The Noctura",
+            "email": "muhamadalghani584@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

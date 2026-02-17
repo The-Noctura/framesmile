@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /framesmile/
+RewriteRule ^index\\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /framesmile/public/index.php [L]
