@@ -3,13 +3,25 @@
 declare(strict_types=1);
 
 function requireAuth(): int {
-    if (session_status() === PHP_SESSION_NONE) session_start();
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // ====== MODE TESTING (HAPUS SAAT PRODUCTION) ======
+    if (!isset($_SESSION['user_id'])) {
+        $_SESSION['user_id'] = 1; // user dummy untuk testing
+    }
+    // ===================================================
+
     $userId = (int)($_SESSION["user_id"] ?? 0);
+
     if ($userId === 0) {
         http_response_code(401);
         echo json_encode(["error" => "Unauthorized"]);
         exit;
     }
+
     return $userId;
 }
 
