@@ -16,8 +16,13 @@
         <div class="login-card">
 
             <h2>Sign Up</h2>
+            <?php
+                if (isset($_GET['error'])) {
+                    echo '<p class="error-message">' . htmlspecialchars($_GET['error']) . '</p>';
+                }
+            ?>
             
-            <form class="Sign-up-form" action="../backend/auth/sign-up.php" method="POST">
+            <form class="Sign-up-form" action="../api/register.php" method="POST">
                 <div class="input-group">
                     <label for="nama-depan">Nama Depan</label>
                     <input type="text" name="first_name" id="nama-depan" placeholder="Masukan Nama Depan" required>
@@ -43,7 +48,7 @@
                     <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
                 </div>
     
-                <button type="submit" class="btn-signin">Sign In</button>
+                <button type="submit" class="btn-signin">Sign Up</button>
             </form>
     
             <p class="or-text">Or Log in with</p>
@@ -61,12 +66,12 @@
                 </button>
             </div>
     
-            <p class="register-link">do you Have Account? <a href="/src/login.html">>> Login Now <<</a></p>
+            <p class="register-link">do you Have Account? <a href="login.php">>> Login Now <<</a></p>
         </div>
     </main>
     
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
 
-
+    <script src='../public/assets/js/sign-up-validation.js'></script>
 </body>
 </html>
