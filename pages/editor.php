@@ -5,8 +5,10 @@ require_once __DIR__ . "/../includes/db.php";
 requireAuth();
 
 // Ambil daftar frame aktif
-$pdo    = getPDO();
-$frames = $pdo->query("SELECT id, name, file_path, thumbnail FROM frames WHERE is_active = 1")->fetchAll();
+global $koneksi;
+$query = "SELECT id, name, file_path, thumbnail FROM frames WHERE is_active = 1";
+$result = mysqli_query($koneksi, $query);
+$frames = $result ? mysqli_fetch_all($result, MYSQLI_ASSOC) : [];
 ?>
 <!DOCTYPE html>
 <html lang="id">
