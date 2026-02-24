@@ -14,7 +14,7 @@ class AuthController{
 
         $checkEmail = mysqli_query($koneksi, "SELECT id FROM users WHERE email = '$email'");
         if(mysqli_num_rows($checkEmail) > 0){
-            return ['succes' => false, 'message' => 'Email sudah terdaftar!'];
+            return ['success' => false, 'message' => 'Email sudah terdaftar!'];
         }
 
         $checkUsername = mysqli_query($koneksi, "SELECT id FROM users WHERE username = '$username'");
@@ -24,7 +24,7 @@ class AuthController{
 
         // Simpan ke database
         $query = "INSERT INTO users (first_name, last_name, username, email, password) 
-                  VALUES ('$first_name', '$last_name', '$username', '$email', '$password')";
+                VALUES ('$first_name', '$last_name', '$username', '$email', '$password')";
 
         if (mysqli_query($koneksi, $query)) {
             return ['success' => true, 'message' => 'Registrasi berhasil!'];
@@ -32,4 +32,26 @@ class AuthController{
             return ['success' => false, 'message' => 'Terjadi kesalahan, coba lagi!'];
         }
     }
+
+    public function login($username, $password){
+        global $koneksi;
+
+        $username = mysqli_real_escape_string($koneksi, trim($username));
+        $password = trim($password);
+
+        $query = "SELECT id, password FROM users WHERE username = '$username'";
+        $result = mysqli_query($koneksi, $query);
+
+        if(mysqli_num_rows($result) > 0){
+            $user = mysqli_fetch_assoc($result);
+
+            if(password_verify($password, $user['password'])){
+                return ['success' => true, 'user_id' => $user['id']];
+            }
+        }
+
+        return ['success' => false, 'message' => 'Username atau password salah!'];
+    }
 }
+
+?>

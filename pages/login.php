@@ -20,13 +20,13 @@
 
             <h2>Welcome Back!</h2>
             
-            <form class="login-form" action="../backend/auth/login.php" method="POST">
+            <form class="login-form" action="../api/login.php" method="POST">
                 <div class="input-group">
                     <input type="text" name="username" id="username" placeholder="Enter Your Username" required>
                 </div>
                 
                 <div class="input-group password-group">
-                    <input type="password" id="password" placeholder="Enter Your Password" required>
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
                     </div>
     
                 <button type="submit" class="btn-signin">Sign In</button>
