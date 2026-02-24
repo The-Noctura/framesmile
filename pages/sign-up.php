@@ -72,6 +72,6 @@
     
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
 
-    <script src='../public/assets/js/sign-up-validation.js'></script>
+    <script src='/framesmile/public/assets/js/sign-up-validation.js'></script>
 </body>
 </html>
