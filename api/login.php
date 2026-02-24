@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result['success']) {
         session_start();
         $_SESSION['user_id'] = $result['user_id'];
-        header('Location: ../pages/editor.php');
+        header('Location: ../pages/home.php');
         exit;
     } else {
         header('Location: ../pages/login.php?error=' . urlencode($result['message']));
