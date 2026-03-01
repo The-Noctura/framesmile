@@ -8,6 +8,7 @@
         <a href="../pages/home.php" class="active">HOME</a>
         <a href="../pages/about.php">ABOUT</a>
         <a href="../pages/product.php">PRODUCT</a>
+        <a href="../pages/editor.php">CUSTOM DESGIN</a>
         <a href="../pages/contact.php">CONTACT</a>
     </div>
 
