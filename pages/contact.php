@@ -17,7 +17,7 @@ mysqli_query($koneksi, "
 
 // ── Config email admin ──
 // Ganti dengan email admin dan kredensial Gmail SMTP kamu
-define('ADMIN_EMAIL',    'ujangzombie130@gmail.com');
+define('ADMIN_EMAIL',    'keyraoktaviani84@gmail.com');
 define('GMAIL_USER',     'mochalgani597@gmail.com');    // ← email Gmail pengirim
 define('GMAIL_PASSWORD', 'wzuy qaey jrsd ufpt');        // ← App Password Gmail (bukan password biasa!)
 // Cara buat App Password: myaccount.google.com → Security → 2-Step Verification → App Passwords
