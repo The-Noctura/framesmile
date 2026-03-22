@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2026 at 07:54 PM
+-- Generation Time: Mar 22, 2026 at 01:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,10 +41,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `message`, `ip_address`, `created_at`) VALUES
-(1, 'Muhamad Alghani', 'mochalgani597@gmail.com', 'jalan teu?', '::1', '2026-03-01 08:12:24'),
-(2, 'Muhamad Alghani', 'mochalgani597@gmail.com', 'cik ah jalan teu', '::1', '2026-03-01 08:13:45'),
-(3, 'Muhamad Alghani', 'mochalgani597@gmail.com', 'masuk gak bos?', '::1', '2026-03-01 08:19:42'),
-(4, 'Muhamad Alghani', 'mochalgani597@gmail.com', 'masuk gak bos?', '::1', '2026-03-01 08:21:04');
+(6, 'Muhamad Alghani', 'mochalgani597@gmail.com', 'blakutak blakutik', '::1', '2026-03-22 00:42:41');
 
 -- --------------------------------------------------------
 
@@ -58,14 +55,18 @@ CREATE TABLE `orders` (
   `customer_phone` varchar(20) DEFAULT NULL,
   `note` text DEFAULT NULL,
   `product_id` int(10) UNSIGNED DEFAULT NULL,
-  `template_id` int(10) UNSIGNED DEFAULT NULL,
   `product_name` varchar(100) DEFAULT NULL,
-  `template_name` varchar(100) DEFAULT NULL,
-  `image_path` varchar(255) DEFAULT NULL,
-  `design_json` longtext DEFAULT NULL,
   `status` enum('pending','processing','done') DEFAULT 'pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `customer_name`, `customer_phone`, `note`, `product_id`, `product_name`, `status`, `created_at`) VALUES
+(1, 'adfasdfa', '123456789098', '', 1, 'Custom', 'done', '2026-03-22 00:38:31'),
+(2, 'sucipto', '0812345678', 'kitu weh lah', 2, 'Template', 'done', '2026-03-22 00:46:19');
 
 -- --------------------------------------------------------
 
@@ -78,6 +79,8 @@ CREATE TABLE `products` (
   `slug` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
+  `price` int(10) UNSIGNED DEFAULT 0,
+  `image` varchar(255) DEFAULT NULL,
   `badge` varchar(50) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT 1,
   `sort_order` int(11) DEFAULT 0,
@@ -88,10 +91,9 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `slug`, `name`, `description`, `badge`, `is_active`, `sort_order`, `created_at`) VALUES
-(1, 'photobooth', 'Photobooth Strip', 'Strip foto 4 panel dengan border dekorasi kustom', 'Populer', 1, 1, '2026-02-26 03:42:11'),
-(2, 'thanks-card', 'Thanks Card', 'Kartu ucapan terimakasih ukuran postcard', 'Baru', 1, 2, '2026-02-26 03:42:11'),
-(3, 'keychain', 'Keychain', 'Gantungan kunci akrilik dengan desain personal', 'Custom', 1, 3, '2026-02-26 03:42:11');
+INSERT INTO `products` (`id`, `slug`, `name`, `description`, `price`, `image`, `badge`, `is_active`, `sort_order`, `created_at`) VALUES
+(1, 'custom', 'Custom', 'Desain bebas sesuka hati — foto, warna, layout, teks semua bisa dikustom langsung bareng admin via WhatsApp.', 15000, 'public/assets/product-assets/images/products/product_1_1774140326.png', 'Populer', 1, 1, '2026-03-21 06:54:55'),
+(2, 'template', 'Template', 'Pilih template yang sudah tersedia, tinggal kirim foto kamu ke admin via WhatsApp — cepat dan mudah.', 10000, 'public/assets/product-assets/images/products/product-2.png', NULL, 1, 2, '2026-03-21 06:54:55');
 
 -- --------------------------------------------------------
 
@@ -156,19 +158,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
