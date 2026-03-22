@@ -2,7 +2,8 @@
 require_once 'auth.php';
 require_once __DIR__ . '/../includes/db.php';
 
-$totalProducts = mysqli_fetch_row(mysqli_query($koneksi, "SELECT COUNT(*) FROM products WHERE is_active=1"))[0]
+$totalProducts = mysqli_fetch_row(mysqli_query($koneksi, "SELECT COUNT(*) FROM products WHERE is_active=1"))[0];
+$totalOrders   = mysqli_fetch_row(mysqli_query($koneksi, "SELECT COUNT(*) FROM orders"))[0];
 
 ?>
 <!DOCTYPE html>
@@ -36,9 +37,9 @@ $totalProducts = mysqli_fetch_row(mysqli_query($koneksi, "SELECT COUNT(*) FROM p
                 <div class="stat-label">Produk Aktif</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">✉️</div>
-                <div class="stat-val"><?= $totalContacts ?></div>
-                <div class="stat-label">Pesan Masuk</div>
+                <div class="stat-icon">🛒</div>
+                <div class="stat-val"><?= $totalOrders ?></div>
+                <div class="stat-label">Total Order</div>
             </div>
         </div>
     </div>

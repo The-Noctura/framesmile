@@ -11,6 +11,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <a href="products.php" class="nav-item <?= $currentPage==='products.php' ? 'active' : '' ?>">
             <span>📦</span> Produk
         </a>
+        <a href="orders.php" class="nav-item <?= $currentPage==='orders.php' ? 'active' : '' ?>">
+            <span>🛒</span> Orders
+        </a>
     </nav>
     <div class="sidebar-bottom">
         <a href="../pages/product.php" class="nav-item" target="_blank">
