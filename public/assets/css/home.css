@@ -1,43 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-.hero{
+/* ========================
+   HERO
+   ======================== */
+.hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 80px 10%;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
-.hero-content{
+.hero-content {
     flex: 1;
+    min-width: 280px;
     max-width: 500px;
 }
 
-.hero-content h1{
+.hero-content h1 {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 10px;
 }
 
-.hero-content h2{
+.hero-content h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
-.hero-content p{
+.hero-content p {
     color: #333;
     margin-bottom: 30px;
 }
 
-.cta{
+.cta {
     display: inline-block;
     background-color: #FF6E6E;
     color: white;
@@ -48,13 +53,20 @@
     transition: all 0.3s ease;
 }
 
-.cta:hover{
+.cta:hover {
     transform: translateY(-2px) scale(1.02);
     background-color: #FF5151;
     box-shadow: 0 5px 15px rgba(230, 91, 91, 0.4);
 }
 
-.hero-img img{
+.hero-img {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    min-width: 260px;
+}
+
+.hero-img img {
     width: 400px;
     height: 400px;
     object-fit: cover;
@@ -70,5 +82,183 @@
     }
     to {
         box-shadow: 0 0 20px rgba(255, 121, 121, 0.8);
+    }
+}
+
+
+/* ========================
+   FAQ
+   ======================== */
+.faq {
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 0 1.5rem;
+}
+
+.faq_title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Garis aksen di bawah judul */
+.faq_title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #FF7979;
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+.faq_subtitle {
+    text-align: center;
+    margin: 1.2rem 0 2.5rem;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* Item FAQ */
+.faq_item {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.faq_item:hover {
+    box-shadow: 0 6px 20px rgba(255, 121, 121, 0.15);
+    transform: translateY(-2px);
+}
+
+.faq_item[open] {
+    border-color: #FF7979;
+}
+
+/* Summary / header item */
+.faq_item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    list-style: none;
+    color: #222;
+    gap: 1rem;
+}
+
+.faq_item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Icon plus/minus */
+.faq_item summary::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #FF7979;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq_item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+/* Konten jawaban */
+.faq_item p {
+    padding: 1rem 1.5rem 1.2rem;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    border-top: 1px solid #f5f5f5;
+    margin: 0;
+}
+
+/* ========================
+   RESPONSIVE — TABLET
+   ======================== */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero-img img {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* ========================
+   RESPONSIVE — MOBILE
+   ======================== */
+@media (max-width: 768px) {
+    .faq {
+        margin: 3rem auto;
+    }
+
+    .faq_title {
+        font-size: 1.6rem;
+    }
+
+    .faq_item summary {
+        font-size: 0.9rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .faq_item p {
+        padding: 0.8rem 1.2rem 1rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 48px 6%;
+        gap: 32px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-img {
+        order: -1; /* gambar di atas di mobile */
+    }
+
+    .hero-img img {
+        width: 240px;
+        height: 240px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-img img {
+        width: 200px;
+        height: 200px;
     }
 }

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../public/assets/css/home.css">
     <link rel="stylesheet" href="../public/assets/css/navbar.css">
     <link rel="stylesheet" href="../public/assets/css/footer.css">
-    <link rel="stylesheet" href="../public/assets/css/faq.css">
     <title>Frame Smile | Home</title>
 </head>
 
@@ -21,7 +20,7 @@
         <div class="hero-content">
             <h1>WELCOME TO</h1>
             <h2>Bingkai senyummu dengan sempurna</h2>
-            <p>Koleksi template edit photobooth yang siap membuat setiap foto menjadi istimew.</p>
+            <p>Koleksi template edit photobooth yang siap membuat setiap foto menjadi istimewa.</p>
             <a href="#" class="cta">Get Your Frame, Now</a>
         </div>
 
@@ -37,33 +36,41 @@
 
         <details class="faq_item">
             <summary>Berapa lama proses editing photobooth?</summary>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, ipsa!</p>
+            <p>Proses editing standar membutuhkan waktu <strong>1–3 hari kerja</strong> setelah file diterima. Untuk layanan <em>express</em>, hasil editing dapat selesai dalam <strong>24 jam</strong> dengan biaya tambahan. Waktu dapat bervariasi tergantung jumlah foto dan tingkat kerumitan editing.</p>
         </details>
+
         <details class="faq_item">
             <summary>Apa saja file yang perlu saya kirimkan?</summary>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sed.</p>
+            <p>Silakan kirimkan file foto dalam format <strong>JPG atau PNG</strong> dengan resolusi minimal <strong>1500 × 1500 piksel</strong> agar hasil cetak tetap tajam. Jika ada referensi desain atau warna tertentu yang diinginkan, sertakan juga contoh gambarnya. File dapat dikirim melalui WhatsApp, Google Drive, atau email.</p>
         </details>
+
         <details class="faq_item">
             <summary>Apa bedanya template dan custom?</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum.</p>
+            <p><strong>Template</strong> menggunakan desain yang sudah tersedia, sehingga prosesnya lebih cepat dan harganya lebih terjangkau. <strong>Custom</strong> berarti desain dibuat dari nol sesuai permintaan Anda — mulai dari warna, layout, hingga elemen grafis — sehingga hasilnya lebih personal namun membutuhkan waktu dan biaya lebih.</p>
         </details>
+
         <details class="faq_item">
             <summary>Apakah bisa cetak foto tanpa editing?</summary>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, eos!</p>
+            <p>Bisa. Kami menerima layanan <strong>cetak langsung</strong> tanpa proses editing jika foto sudah siap cetak. Pastikan file yang dikirim memiliki resolusi dan ukuran yang sesuai dengan format cetak yang dipilih. Tim kami akan mengonfirmasi kesesuaian file sebelum proses cetak dimulai.</p>
         </details>
+
         <details class="faq_item">
             <summary>Bagaimana cara pengiriman hasil editing / cetak?</summary>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, eos!</p>
+            <p>Hasil <strong>editing digital</strong> akan dikirimkan melalui WhatsApp atau Google Drive dalam format JPG/PNG. Untuk hasil <strong>cetak fisik</strong>, pengiriman dilakukan via jasa ekspedisi (JNE, J&T, SiCepat, dll.) ke seluruh Indonesia, atau bisa diambil langsung di toko kami. Ongkos kirim ditanggung oleh pelanggan.</p>
         </details>
+
         <details class="faq_item">
             <summary>Metode pembayaran apa saja yang tersedia?</summary>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, possimus.</p>
+            <p>Kami menerima berbagai metode pembayaran, antara lain <strong>transfer bank</strong> (BCA, Mandiri, BRI), <strong>dompet digital</strong> (GoPay, OVO, DANA, ShopeePay), serta pembayaran tunai untuk pelanggan yang datang langsung. Pembayaran dilakukan di muka sebelum proses dikerjakan.</p>
         </details>
     </section>
 
     <!-- footer -->
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
-    
+
+    <!-- Script hamburger menu untuk mobile -->
+    <script src="../public/assets/js/home.js"></script>
+
 </body>
 
 </html>
