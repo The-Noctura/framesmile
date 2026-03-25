@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/assets/css/home.css">
-    <link rel="stylesheet" href="../public/assets/css/navbar.css">
-    <link rel="stylesheet" href="../public/assets/css/footer.css">
     <title>Frame Smile | Home</title>
 </head>
 
@@ -21,7 +19,7 @@
             <h1>WELCOME TO</h1>
             <h2>Bingkai senyummu dengan sempurna</h2>
             <p>Koleksi template edit photobooth yang siap membuat setiap foto menjadi istimewa.</p>
-            <a href="#" class="cta">Get Your Frame, Now</a>
+            <a href="../pages/product.php" class="cta">Get Your Frame, Now</a>
         </div>
 
         <div class="hero-img">
@@ -69,7 +67,7 @@
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
 
     <!-- Script hamburger menu untuk mobile -->
-    <script src="../public/assets/js/home.js"></script>
+    <script src="../public/assets/js/hamburger.js"></script>
 
 </body>
 

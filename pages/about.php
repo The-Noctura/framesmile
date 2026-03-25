@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/assets/css/about.css">
-    <link rel="stylesheet" href="../public/assets/css/navbar.css">
-    <link rel="stylesheet" href="../public/assets/css/footer.css">
     <title>Frame Smile | About</title>
 </head>
 <body>
@@ -16,7 +14,7 @@
         <div class="hero-content">
             <h1 class="hero-title">Membingkai senyum terbaikmu dengan sempurna</h1>
             <p class="hero-text">
-                Frame Smile hadir untuk membuat semua momen semakin berkesan, kami menyediakan berbagai template "photobooth unik, modern dan siap dipersonalisasi". 
+                Frame Smile hadir untuk membuat semua momen semakin berkesan, kami menyediakan berbagai template "photobooth unik, modern dan siap dipersonalisasi".
             </p>
         </div>
         <div class="hero-image">
@@ -74,6 +72,6 @@
 
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
 
-    <script src="/src/script.js"></script>
+    <script src="../public/assets/js/hamburger.js"></script>
 </body>
 </html>
