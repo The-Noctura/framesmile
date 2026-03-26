@@ -5,7 +5,7 @@ $products = [];
 $res = mysqli_query($koneksi, "SELECT * FROM products WHERE is_active=1 ORDER BY sort_order ASC");
 while ($row = mysqli_fetch_assoc($res)) $products[] = $row;
 
-$adminWA = '6281234567890'; // ← ganti nomor WA admin
+$adminWA = '628999496466'; // ← ganti nomor WA admin
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,7 +122,8 @@ $adminWA = '6281234567890'; // ← ganti nomor WA admin
 
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
 
-
+        <!-- Script hamburger menu untuk mobile -->
+    <script src="../public/assets/js/hamburger.js"></script>
 </body>
 
 </html>

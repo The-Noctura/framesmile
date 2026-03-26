@@ -206,7 +206,7 @@ function emailTemplate($name, $email, $pesan) {
             <div class="text-container">
                 <h1>Let's Get in Touch</h1>
                 <p>Ingin mendapatkan jawaban atas pertanyaan Anda secara cepat?</p>
-                <div class="social-contact-container">
+                <div class="social-contacts">
                     <div class="social-contact">
                         <img src="../public/assets/contact-assets/images/email.svg" alt="Email">
                         <p>framesmile.id@gmail.com</p>
@@ -353,6 +353,8 @@ function emailTemplate($name, $email, $pesan) {
         btnEl.classList.add('btn-loading');
     });
     </script>
+        <!-- Script hamburger menu untuk mobile -->
+    <script src="../public/assets/js/hamburger.js"></script>
 
 </body>
 </html>
