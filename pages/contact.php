@@ -39,7 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     elseif (strlen($name) < 2)         $errors['name']  = 'Nama minimal 2 karakter.';
 
     if (!$email)                       $errors['email'] = 'Email wajib diisi.';
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Format email tidak valid.';
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/\.[a-zA-Z]{2,}$/', $email)) {
+      $errors['email'] = 'Format email tidak valid.';
+    }
 
     if (!$pesan)                       $errors['pesan'] = 'Pesan wajib diisi.';
     elseif (strlen($pesan) < 10)       $errors['pesan'] = 'Pesan minimal 10 karakter.';
@@ -324,7 +326,7 @@ function emailTemplate($name, $email, $pesan) {
     emailEl.addEventListener('blur', () => {
         const v = emailEl.value.trim();
         if (!v) showErr(emailEl, 'Email wajib diisi.');
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) showErr(emailEl, 'Format email tidak valid.');
+        else if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(v)) showErr(emailEl, 'Format email tidak valid.');
         else clearErr(emailEl);
     });
 
@@ -344,7 +346,7 @@ function emailTemplate($name, $email, $pesan) {
         const pesan = pesanEl.value.trim();
 
         if (!name || name.length < 2)  { showErr(nameEl, !name ? 'Nama wajib diisi.' : 'Nama minimal 2 karakter.'); valid = false; }
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr(emailEl, !email ? 'Email wajib diisi.' : 'Format email tidak valid.'); valid = false; }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email)) { showErr(emailEl, !email ? 'Email wajib diisi.' : 'Format email tidak valid.'); valid = false; }
         if (!pesan || pesan.length < 10) { showErr(pesanEl, !pesan ? 'Pesan wajib diisi.' : 'Pesan minimal 10 karakter.'); valid = false; }
 
         if (!valid) { e.preventDefault(); return; }

@@ -8,12 +8,6 @@ function requireAuth(): int {
         session_start();
     }
 
-    // ====== MODE TESTING (HAPUS SAAT PRODUCTION) ======
-    if (!isset($_SESSION['user_id'])) {
-        $_SESSION['user_id'] = 1; // user dummy untuk testing
-    }
-    // ===================================================
-
     $userId = (int)($_SESSION["user_id"] ?? 0);
 
     if ($userId === 0) {

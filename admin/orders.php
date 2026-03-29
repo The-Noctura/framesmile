@@ -147,17 +147,25 @@ while ($row = mysqli_fetch_assoc($res)) $orders[] = $row;
                             <span style="color:var(--gray);"><?= date('H:i', strtotime($o['created_at'])) ?></span>
                         </td>
                         <td>
-                            <form method="POST" style="display:flex;gap:4px;align-items:center;">
-                                <input type="hidden" name="action" value="update_status">
-                                <input type="hidden" name="order_id" value="<?= $o['id'] ?>">
-                                <select name="status" class="form-input"
-                                        style="padding:4px 6px;font-size:11px;width:auto;">
-                                    <option value="pending"    <?= $o['status']==='pending'    ?'selected':'' ?>>Pending</option>
-                                    <option value="processing" <?= $o['status']==='processing' ?'selected':'' ?>>Proses</option>
-                                    <option value="done"       <?= $o['status']==='done'       ?'selected':'' ?>>Selesai</option>
-                                </select>
-                                <button type="submit" class="tbl-btn">✓</button>
-                            </form>
+                            <div style="display:flex;flex-direction:column;gap:6px;">
+                                <form method="POST" style="display:flex;gap:4px;align-items:center;">
+                                    <input type="hidden" name="action" value="update_status">
+                                    <input type="hidden" name="order_id" value="<?= $o['id'] ?>">
+                                    <select name="status" class="form-input"
+                                            style="padding:4px 6px;font-size:11px;width:auto;">
+                                        <option value="pending"    <?= $o['status']==='pending'    ?'selected':'' ?>>Pending</option>
+                                        <option value="processing" <?= $o['status']==='processing' ?'selected':'' ?>>Proses</option>
+                                        <option value="done"       <?= $o['status']==='done'       ?'selected':'' ?>>Selesai</option>
+                                    </select>
+                                    <button type="submit" class="tbl-btn">✓</button>
+                                </form>
+                                <a href="?delete=<?= $o['id'] ?>&status=<?= $statusFilter ?>"
+                                   class="tbl-btn"
+                                   style="color:#dc2626;border-color:#dc2626;text-align:center;text-decoration:none;font-size:11px;"
+                                   onclick="return confirm('Hapus order <?= 'ORD-' . str_pad($o['id'], 4, '0', STR_PAD_LEFT) ?> (<?= htmlspecialchars(addslashes($o['customer_name'])) ?>)?\nTindakan ini tidak bisa dibatalkan.')">
+                                    🗑 Hapus
+                                </a>
+                            </div>
                         </td>
                     </tr>
                     <?php endforeach; ?>

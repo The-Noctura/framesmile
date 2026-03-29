@@ -12,7 +12,6 @@ $routes = [
     '/contact'  => '../pages/contact.php',
     '/login'    => '../pages/login.php',
     '/sign-up'  => '../pages/sign-up.php',
-    '/editor'   => '../pages/editor.php',
     '/orders'   => '../pages/orders.php',
     '/product'  => '../pages/product.php',
 ];
