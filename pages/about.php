@@ -67,11 +67,13 @@
 
     <section class="cta-banner">
         <h2>Siap membuat momenmu tak terlupakan?</h2>
-        <a href="#" class="cta-button">Get Your Frame, Now</a>
+        <a href="product.php" class="cta-button">Get Your Frame, Now</a>
     </section>
 
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
 
     <script src="../public/assets/js/hamburger.js"></script>
+    <script src="../public/assets/js/navbar-css.js"></script>
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 // pages/contact.php
 session_start();
-require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../app/config/database.php';
 
 // ── Buat tabel contacts kalau belum ada ──
 mysqli_query($koneksi, "
@@ -346,7 +346,7 @@ function emailTemplate($name, $email, $pesan) {
         const pesan = pesanEl.value.trim();
 
         if (!name || name.length < 2)  { showErr(nameEl, !name ? 'Nama wajib diisi.' : 'Nama minimal 2 karakter.'); valid = false; }
-        if (!email || !/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email)) { showErr(emailEl, !email ? 'Email wajib diisi.' : 'Format email tidak valid.'); valid = false; }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email)) z{ showErr(emailEl, !email ? 'Email wajib diisi.' : 'Format email tidak valid.'); valid = false; }
         if (!pesan || pesan.length < 10) { showErr(pesanEl, !pesan ? 'Pesan wajib diisi.' : 'Pesan minimal 10 karakter.'); valid = false; }
 
         if (!valid) { e.preventDefault(); return; }
@@ -357,6 +357,8 @@ function emailTemplate($name, $email, $pesan) {
     </script>
         <!-- Script hamburger menu untuk mobile -->
     <script src="../public/assets/js/hamburger.js"></script>
+    <script src="../public/assets/js/navbar-css.js"></script>
+
 
 </body>
 </html>

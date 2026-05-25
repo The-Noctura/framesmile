@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar" id="mainNavbar">
     <!-- Kolom 1: Logo kiri -->
     <div class="logo">
         <a href="../pages/home.php"><img src="../public/assets/img/icon-framesmile.png" alt="Logo Frame Smile"></a>
@@ -26,3 +26,13 @@
         <span></span>
     </button>
 </div>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navbar    = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    });
+</script>

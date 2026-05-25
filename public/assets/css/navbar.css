@@ -1,16 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* ========================
+   FLOATING NAVBAR
+   ======================== */
+
+/* Spacer agar konten di bawah navbar tidak tertutup */
+body {
+    padding-top: 90px;
+}
+
 .navbar {
-    background-color: #FBFAFF;
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 1100px;
+    z-index: 1000;
+
+    background-color: rgba(251, 250, 255, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
-    padding: 15px 25px;
-    position: relative;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 121, 121, 0.15);
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.08),
+        0 1px 4px rgba(0, 0, 0, 0.04);
+
+    padding: 12px 24px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/* Saat scroll — sedikit lebih solid */
+.navbar.scrolled {
+    background-color: rgba(251, 250, 255, 0.96);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================
+   LOGO
+   ======================== */
 .logo {
     display: flex;
     gap: 10px;
@@ -19,40 +57,51 @@
 }
 
 .logo img {
-    width: 75px;
+    width: 50px;
     height: auto;
 }
 
 .logo p {
-    font-weight: 600;
-    font-size: 21px;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .logo span {
     color: #FF7979;
 }
 
-/* navlinks — kolom tengah */
+/* ========================
+   NAVLINKS — tengah
+   ======================== */
 .navlink {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    gap: 15px;
+    font-size: 13px;
+    gap: 4px;
 }
 
 .navlink a {
     text-decoration: none;
-    color: black;
-    font-weight: 500;
-    padding: 8px 12px;
+    color: #333;
+    font-weight: 600;
+    padding: 7px 13px;
+    border-radius: 10px;
+    letter-spacing: 0.4px;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-.navlink a:hover {
+.navlink a:hover,
+.navlink a.active {
     color: #FF7979;
+    background-color: rgba(255, 121, 121, 0.08);
 }
 
-/* nav-btn — kolom kanan */
+/* ========================
+   NAV BUTTONS — kanan
+   ======================== */
 .nav-btn {
     display: flex;
     align-items: center;
@@ -60,25 +109,46 @@
     gap: 8px;
 }
 
-.nav-btn a {
+.nav-btn a:first-child {
+    background-color: transparent;
+    color: #FF7979;
+    border: 1.5px solid #FF7979;
+    border-radius: 10px;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.nav-btn a:first-child:hover {
+    background-color: rgba(255, 121, 121, 0.08);
+}
+
+.nav-btn a:last-child {
     background-color: #FF7979;
     color: white;
-    border-radius: 6px;
-    padding: 6px 14px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    border: 1.5px solid #FF7979;
+    border-radius: 10px;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 13px;
     text-decoration: none;
-    font-weight: 500;
+    transition: all 0.25s ease;
+    display: inline-block;
 }
 
-.nav-btn a:hover {
-    transform: translateY(-2px) scale(1.02);
+.nav-btn a:last-child:hover {
     background-color: #FF5151;
-    box-shadow: 0 5px 15px rgba(230, 91, 91, 0.4);
-    cursor: pointer;
+    border-color: #FF5151;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(255, 81, 81, 0.35);
 }
 
-/* Hamburger — hidden di desktop */
+/* ========================
+   HAMBURGER — mobile only
+   ======================== */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -93,9 +163,9 @@
 
 .hamburger span {
     display: block;
-    width: 24px;
+    width: 22px;
     height: 2px;
-    background-color: #333;
+    background-color: #444;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -116,8 +186,16 @@
    RESPONSIVE — MOBILE
    ======================== */
 @media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+
     .navbar {
+        top: 10px;
+        width: calc(100% - 24px);
         grid-template-columns: 1fr auto;
+        padding: 10px 16px;
+        border-radius: 14px;
     }
 
     .hamburger {
@@ -132,7 +210,7 @@
         width: 100%;
     }
 
-    /* Dropdown menu saat open */
+    /* Dropdown saat open */
     .navbar.open .navlink,
     .navbar.open .nav-btn {
         display: flex;
@@ -141,7 +219,8 @@
     .navbar.open {
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto auto;
-        flex-wrap: wrap;
+        border-radius: 14px;
+        background-color: rgba(251, 250, 255, 0.97);
     }
 
     .logo {
@@ -166,8 +245,9 @@
     .navlink a {
         padding: 10px 4px;
         width: 100%;
+        border-radius: 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .nav-btn {
@@ -178,18 +258,19 @@
         padding: 12px 0 4px;
     }
 
-    .nav-btn a {
+    .nav-btn a:first-child,
+    .nav-btn a:last-child {
         flex: 1;
         text-align: center;
         padding: 8px;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .logo img {
-        width: 50px;
+        width: 40px;
     }
 
     .logo p {
-        font-size: 16px;
+        font-size: 15px;
     }
 }

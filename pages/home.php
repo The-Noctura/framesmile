@@ -27,6 +27,40 @@
         </div>
     </section>
 
+    <!-- cara kerja -->
+    <section class="how-it-works">
+        <h2 class="how-it-works__title">Cara Kerja</h2>
+        <p class="how-it-works__subtitle">Pesan photostrip kamu dalam 4 langkah mudah</p>
+
+        <div class="how-it-works__steps">
+            <div class="hiw-step">
+                <div class="hiw-step__number">1</div>
+                <h3>Pilih Paket</h3>
+                <p>Tentukan paket Custom, Template, atau Bundling sesuai kebutuhanmu</p>
+            </div>
+            <div class="hiw-step__divider"></div>
+            <div class="hiw-step">
+                <div class="hiw-step__number">2</div>
+                <h3>Chat Admin</h3>
+                <p>Diskusikan desain dan kirim foto kamu ke admin via WhatsApp</p>
+            </div>
+            <div class="hiw-step__divider"></div>
+            <div class="hiw-step">
+                <div class="hiw-step__number">3</div>
+                <h3>Lakukan Pembayaran</h3>
+                <p>Konfirmasi pesanan dan selesaikan pembayaran</p>
+            </div>
+            <div class="hiw-step__divider"></div>
+            <div class="hiw-step">
+                <div class="hiw-step__number">4</div>
+                <h3>Terima Photostrip</h3>
+                <p>Photostrip dicetak dan dikirim ke tanganmu</p>
+            </div>
+        </div>
+
+        <a href="../pages/product.php" class="hiw-link">Lihat panduan lengkap per paket</a>
+    </section>
+
     <section class="faq">
 
         <h2 class="faq_title">FAQ?</h2>
@@ -68,6 +102,7 @@
 
     <!-- Script hamburger menu untuk mobile -->
     <script src="../public/assets/js/hamburger.js"></script>
+    <script src="../public/assets/js/navbar-css.js"></script>
 
 </body>
 

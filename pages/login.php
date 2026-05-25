@@ -53,5 +53,7 @@
 
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
     <script src="../public/assets/js/hamburger.js"></script>
+    <script src="../public/assets/js/navbar-css.js"></script>
+
 </body>
 </html>

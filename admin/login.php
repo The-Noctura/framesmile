@@ -10,7 +10,7 @@ $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pass = $_POST['password'] ?? '';
-    define('ADMIN_PASSWORD', 'framesmile2024'); // ← ganti password di sini
+    define('ADMIN_PASSWORD', 'framesmile2024');
 
     if ($pass === ADMIN_PASSWORD) {
         $_SESSION['fs_admin'] = true;

@@ -74,5 +74,7 @@
 
     <script src='/framesmile/public/assets/js/sign-up-validation.js'></script>
     <script src="../public/assets/js/hamburger.js"></script>
+    <script src="../public/assets/js/navbar-css.js"></script>
+
 </body>
 </html>
