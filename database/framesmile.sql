@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2026 at 01:47 AM
+-- Generation Time: May 31, 2026 at 03:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `framesmile`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bundles`
+--
+
+CREATE TABLE `bundles` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `contents` varchar(255) DEFAULT NULL,
+  `original_price` int(10) UNSIGNED DEFAULT 0,
+  `bundle_price` int(10) UNSIGNED DEFAULT 0,
+  `badge` varchar(50) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT 1,
+  `sort_order` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bundles`
+--
+
+INSERT INTO `bundles` (`id`, `name`, `description`, `contents`, `original_price`, `bundle_price`, `badge`, `is_active`, `sort_order`) VALUES
+(1, 'Starter Pack', 'Cocok buat kamu yang baru mau coba — dapat 3 strip template pilihan sendiri.', '3 strip Template', 30000, 25000, NULL, 1, 1),
+(2, 'Party Pack', 'Pas banget buat acara atau kumpul bareng — 5 strip template siap cetak.', '5 strip Template', 50000, 40000, 'Terlaris', 1, 2),
+(3, 'Premium Pack', 'Mau yang personal sekaligus banyak? 2 desain custom + 2 template dalam satu paket.', '2 Custom + 2 Template', 50000, 42000, NULL, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -41,7 +68,8 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `message`, `ip_address`, `created_at`) VALUES
-(6, 'Muhamad Alghani', 'mochalgani597@gmail.com', 'blakutak blakutik', '::1', '2026-03-22 00:42:41');
+(6, 'Muhamad Alghani', 'mochalgani597@gmail.com', 'blakutak blakutik', '::1', '2026-03-22 00:42:41'),
+(7, 'Custom', 'mochalgani597@gmail.com123', 'asdfaaaaaaaaaaaaa', '::1', '2026-03-27 00:20:27');
 
 -- --------------------------------------------------------
 
@@ -60,14 +88,6 @@ CREATE TABLE `orders` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `customer_name`, `customer_phone`, `note`, `product_id`, `product_name`, `status`, `created_at`) VALUES
-(1, 'adfasdfa', '123456789098', '', 1, 'Custom', 'done', '2026-03-22 00:38:31'),
-(2, 'sucipto', '0812345678', 'kitu weh lah', 2, 'Template', 'done', '2026-03-22 00:46:19');
-
 -- --------------------------------------------------------
 
 --
@@ -77,6 +97,7 @@ INSERT INTO `orders` (`id`, `customer_name`, `customer_phone`, `note`, `product_
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
   `slug` varchar(50) NOT NULL,
+  `type` enum('custom','template') NOT NULL DEFAULT 'custom',
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
   `price` int(10) UNSIGNED DEFAULT 0,
@@ -91,9 +112,9 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `slug`, `name`, `description`, `price`, `image`, `badge`, `is_active`, `sort_order`, `created_at`) VALUES
-(1, 'custom', 'Custom', 'Desain bebas sesuka hati — foto, warna, layout, teks semua bisa dikustom langsung bareng admin via WhatsApp.', 15000, 'public/assets/product-assets/images/products/product_1_1774140326.png', 'Populer', 1, 1, '2026-03-21 06:54:55'),
-(2, 'template', 'Template', 'Pilih template yang sudah tersedia, tinggal kirim foto kamu ke admin via WhatsApp — cepat dan mudah.', 10000, 'public/assets/product-assets/images/products/product-2.png', NULL, 1, 2, '2026-03-21 06:54:55');
+INSERT INTO `products` (`id`, `slug`, `type`, `name`, `description`, `price`, `image`, `badge`, `is_active`, `sort_order`, `created_at`) VALUES
+(1, 'custom', 'custom', 'Custom', 'Desain bebas sesuka hati — foto, warna, layout, teks semua bisa dikustom langsung bareng admin via WhatsApp.', 15000, 'public/assets/product-assets/images/products/product_1_1774570594.png', 'Populer', 1, 1, '2026-03-21 06:54:55'),
+(2, 'template', 'template', 'Template', 'Pilih template yang sudah tersedia, tinggal kirim foto kamu ke admin via WhatsApp — cepat dan mudah.', 10000, 'public/assets/product-assets/images/products/product-2.png', NULL, 1, 2, '2026-03-21 06:54:55');
 
 -- --------------------------------------------------------
 
@@ -122,6 +143,12 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `pass
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bundles`
+--
+ALTER TABLE `bundles`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contacts`
@@ -155,16 +182,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bundles`
+--
+ALTER TABLE `bundles`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
